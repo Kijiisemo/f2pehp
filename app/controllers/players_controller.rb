@@ -170,6 +170,15 @@ class PlayersController < ApplicationController
     if @restrictions["1 defence"]
       @players = @players.where(defence_lvl: 1)
     end
+	  if @restrictions["1 ranged"]
+      @players = @players.where(ranged_lvl: 1)
+    end
+	  if @restrictions["1 magic"]
+      @players = @players.where(magic_lvl: 1)
+    end
+	  if @restrictions["1 prayer"]
+      @players = @players.where(prayer_lvl: 1)
+    end
     if @restrictions["3 combat"]
       @players = @players.where(hitpoints_lvl: 10, attack_lvl: 1, strength_lvl: 1, defence_lvl: 1, ranged_lvl: 1, magic_lvl: 1, prayer_lvl: 1)
     end
